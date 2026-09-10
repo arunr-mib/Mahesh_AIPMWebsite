@@ -23,32 +23,38 @@ import { ProjectEditor } from "@/pages/ProjectEditor";
 import { AllProjectsPage } from "@/pages/AllProjectsPage";
 import { ProjectDetailPage } from "@/pages/ProjectDetailPage";
 import Testimonials from "@/pages/Testimonials";
+import { Footer } from "@/components/Footer";
 
 function Router() {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Public */}
-        <Route path="/" element={<CohortProjects />} />
-        <Route path="/bootcamp" element={<Bootcamp />} />
-        <Route path="/cohort-projects" element={<CohortProjects />} />
-        <Route path="/all-projects/:section" element={<AllProjectsPage />} />
-        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
-        {/* Cohort admin */}
-        <Route path="/cohort-admin" element={<CohortAdminLogin />} />
-        <Route path="/cohort-admin/dashboard" element={<CohortAdminDashboard />} />
-        {/* Project user editing */}
-        <Route path="/project-login" element={<ProjectUserLogin />} />
-        <Route path="/my-projects" element={<ProjectUserDashboard />} />
-        <Route path="/project-editor/:projectId" element={<ProjectEditor />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/agents" element={<Agents />} />
-        <Route path="/admin-login" element={<AdminLoginPage />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/edit-agent/:projectId" element={<EditAgent />} />
-        {/* Fallback to 404 */}
-        <Route element={<NotFound />} />
-      </Routes>
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-1">
+          <Routes>
+            {/* Public */}
+            <Route path="/" element={<CohortProjects />} />
+            <Route path="/bootcamp" element={<Bootcamp />} />
+            <Route path="/cohort-projects" element={<CohortProjects />} />
+            <Route path="/all-projects/:section" element={<AllProjectsPage />} />
+            <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+            {/* Cohort admin */}
+            <Route path="/cohort-admin" element={<CohortAdminLogin />} />
+            <Route path="/cohort-admin/dashboard" element={<CohortAdminDashboard />} />
+            {/* Project user editing */}
+            <Route path="/project-login" element={<ProjectUserLogin />} />
+            <Route path="/my-projects" element={<ProjectUserDashboard />} />
+            <Route path="/project-editor/:projectId" element={<ProjectEditor />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/agents" element={<Agents />} />
+            <Route path="/admin-login" element={<AdminLoginPage />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/edit-agent/:projectId" element={<EditAgent />} />
+            {/* Fallback to 404 */}
+            <Route element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
