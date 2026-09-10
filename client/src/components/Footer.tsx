@@ -16,7 +16,7 @@ export function Footer() {
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 500, fontSize: "0.75rem", letterSpacing: "0.03em", color: "#1a1a1a99" }}
           className="hover:text-black transition-colors"
         >
-          ©2026 allNeurons All Rights Reserved
+          ©2026 Pragyaa LLC All Rights Reserved
         </a>
       </div>
     </footer>
